@@ -34,7 +34,11 @@ public class letzNavBrowser {
 				options.addExtensions(
 						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_editor.crx"));
 			}
-			capabilities = new DesiredCapabilities();
+		
+			//options.addArguments("--headless", "--disable-gpu");
+			//driver = new ChromeDriver(options);
+			
+		   capabilities = new DesiredCapabilities();
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 			driver = new ChromeDriver(capabilities);
 			driver.manage().window().maximize();
@@ -57,7 +61,8 @@ public class letzNavBrowser {
 				options.addExtensions(
 						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_editor.crx"));
 			}
-
+			//options.addArguments("--headless", "--disable-gpu");
+			//driver = new ChromeDriver(options);
 			capabilities = new DesiredCapabilities();
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 			driver = new ChromeDriver(capabilities);

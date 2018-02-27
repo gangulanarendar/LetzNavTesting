@@ -1,12 +1,7 @@
 package letzNavTestFrameWork.letzNavTestScripts;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.reflect.Method;
-import java.net.URL;
-import java.nio.channels.Channels;
-import java.nio.channels.ReadableByteChannel;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
@@ -16,7 +11,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
-
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -59,44 +53,7 @@ public class letzNavRegressionTestEditorTest {
 	letzNavInstaller installer;
 	String msg;
 	
-	/*public static void downloadExtension(String extensionName) {
-		
-		 String file = System.getProperty("user.dir") + "/ExtensionResouces/CRX";
-		
-		 System.out.println("System.getProperty(user.dir) :"+System.getProperty("user.dir"));
-		 String	filePath = file.replace("CRX", "letznav_editor.crx");
-		System.out.println("filePath "+filePath);
-		try {
-			URL url = new URL("https://letznav-testing.herokuapp.com/api/public/admin/extensions/editor/letznav_editor.crx");
-			ReadableByteChannel rbc = Channels.newChannel(url.openStream());
-			FileOutputStream fos = new FileOutputStream(filePath);
-			fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
-			fos.close();
-			rbc.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	 public static void printfileNames(File folder)
-	    {
-	    	for(File f:folder.listFiles())
-	    	{
-	    		if(f.isDirectory())
-	    		{
-	    			printfileNames(f);
-	    			
-	    		}
-	    		
-	    		 try {
-					System.out.println("Inner getCanonicalPath files "+f.getCanonicalFile().getCanonicalPath());
-					System.out.println("Inner getAbsolutePath files "+f.getAbsolutePath());
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-	    	}
-	    }*/
+
 	// This meathod initializes browser and installs extentions to browser
 	@BeforeClass
 	public void openBrowserAndInstallExtensions() throws Exception {	  	
@@ -333,7 +290,7 @@ public class letzNavRegressionTestEditorTest {
 
 	@AfterClass // This meathod will close browser
 	public void afterClass() throws IOException {
-		installer.clearExtensionResources();
+		//installer.clearExtensionResources();
 		driver.quit();
 
 	}

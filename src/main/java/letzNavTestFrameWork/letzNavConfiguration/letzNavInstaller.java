@@ -21,6 +21,12 @@ public class letzNavInstaller extends letzNavPropertiesReader {
 	public String filePath;
 
 	public void downloadExtension(String extensionName) {
+		try {
+			FileUtils.cleanDirectory(extensionResources);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			//e1.printStackTrace();
+		}
 		if (extensionName.equalsIgnoreCase("player")) {
 			downloadUrl = playerUrl;
 			filePath = file.replace("CRX", "letznav_player.crx");
