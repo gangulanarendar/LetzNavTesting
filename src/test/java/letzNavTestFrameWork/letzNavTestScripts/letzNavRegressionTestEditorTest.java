@@ -59,9 +59,9 @@ public class letzNavRegressionTestEditorTest {
 	letzNavInstaller installer;
 	String msg;
 	
-	public static void downloadExtension(String extensionName) {
+	/*public static void downloadExtension(String extensionName) {
 		
-		 String file = System.getProperty("user.dir") + "/ExecutionBrowserDrivers/CRX";
+		 String file = System.getProperty("user.dir") + "/ExtensionResouces/CRX";
 		
 		 System.out.println("System.getProperty(user.dir) :"+System.getProperty("user.dir"));
 		 String	filePath = file.replace("CRX", "letznav_editor.crx");
@@ -96,18 +96,13 @@ public class letzNavRegressionTestEditorTest {
 					e.printStackTrace();
 				}
 	    	}
-	    }
+	    }*/
 	// This meathod initializes browser and installs extentions to browser
 	@BeforeClass
-	public void openBrowserAndInstallExtensions() throws Exception {
-		
-		
-		Assert.assertTrue(true);
-		logs = Logger.getLogger("devpinoyLogger");
-		  	
-	/*	installer = new letzNavInstaller();
+	public void openBrowserAndInstallExtensions() throws Exception {	  	
+	installer = new letzNavInstaller();
 		installer.downloadExtension("editor");
-		
+		logs = Logger.getLogger("devpinoyLogger");
 		report = letzNavExtentReports.getInstance();
 		driver = letzNavBrowser.startBrowser("chrome", letzNavPropertiesReader.getValue("url"), component);
 		// player = new letzNavPlayer(driver);
@@ -115,11 +110,11 @@ public class letzNavRegressionTestEditorTest {
 		clarity = new clarityPPM(driver);
 		String testDataFile = System.getProperty("user.dir") + "\\TestData\\Book1.xlsx";
 		//String testDataFile = letzNavPropertiesReader.getValue("testdata");
-		letzNavExcelReader.setExcelFile(testDataFile, "EmployeeData");*/
+		letzNavExcelReader.setExcelFile(testDataFile, "EmployeeData");
 	}
 
 	// Data driven validateWorkFlows
-	/*@DataProvider(name = "data")
+	@DataProvider(name = "data")
 	public Object[][] getData(Method method) {
 		Object[][] testData = null;
 		if (method.getName().equals("validateLaunchers")) {
@@ -143,37 +138,12 @@ public class letzNavRegressionTestEditorTest {
 			return testData;
 		}
 
-	}*/
+	}
 
 	// This test validates login to application
 	@Test(priority = 1)
 	public void editorLogin() {
-		downloadExtension("");
-		  File files=new File(System.getProperty("user.dir"));
-		  	for(File f:files.listFiles())
-			{
-				if(f.isDirectory())
-				{
-					printfileNames(f);
-					
-				}
-				
-				try {
-					System.out.println("Top Level getCanonicalPath files "+f.getCanonicalFile().getCanonicalPath());
-					System.out.println("Top Level getCanonicalPath files "+f.getAbsolutePath());
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				
-				
-			}
-		  	
-		
-		Assert.assertTrue(true);
-		test = report.startTest("Login Clarity PPM");
-		test.log(LogStatus.INFO, "Validate clarity & editor login");
-		/*try {
+		try {
 			logs.debug("Test Clarity and Editor Login");
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			test = report.startTest("Login Clarity PPM");
@@ -186,7 +156,7 @@ public class letzNavRegressionTestEditorTest {
 			msg = e.getMessage();
 			test.log(LogStatus.ERROR, msg);
 			e.printStackTrace();
-		}*/
+		}
 	}
 
 	@Test(dependsOnMethods = "editorLogin", priority = 2, enabled =  false)

@@ -29,10 +29,10 @@ public class letzNavBrowser {
 			options = new ChromeOptions();
 			if (component.equalsIgnoreCase("player")) {
 				options.addExtensions(
-						new File(System.getProperty("user.dir") + "//ExtensionResouces//letznav_player.crx"));
+						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_player.crx"));
 			} else if (component.equalsIgnoreCase("editor")) {
 				options.addExtensions(
-						new File(System.getProperty("user.dir") + "//ExtensionResouces//letznav_editor.crx"));
+						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_editor.crx"));
 			}
 			capabilities = new DesiredCapabilities();
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
@@ -52,10 +52,10 @@ public class letzNavBrowser {
 			options = new ChromeOptions();
 			if (component.equalsIgnoreCase("player")) {
 				options.addExtensions(
-						new File(System.getProperty("user.dir") + "//ExtensionResouces//letznav_player.crx"));
+						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_player.crx"));
 			} else if (component.equalsIgnoreCase("editor")) {
 				options.addExtensions(
-						new File(System.getProperty("user.dir") + "//ExtensionResouces//letznav_editor.crx"));
+						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_editor.crx"));
 			}
 
 			capabilities = new DesiredCapabilities();

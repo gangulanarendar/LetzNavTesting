@@ -11,10 +11,10 @@ import org.apache.commons.io.FileUtils;
 
 public class letzNavInstaller extends letzNavPropertiesReader {
 
-	public String file = System.getProperty("user.dir") + "//ExtensionResouces//CRX";
-	public String directory = System.getProperty("user.dir") + "//ExtensionResouces//";
+	public String file = System.getProperty("user.dir") + "//ExecutionBrowserDrivers//CRX";
+	public String directory = System.getProperty("user.dir") + "//ExecutionBrowserDrivers//";
 	File extensionResources = new File(directory);
-	public String filePlayer = System.getProperty("user.dir") + "//ExtensionResouces//letznav_player.crx";
+	public String filePlayer = System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_player.crx";
 	public String editorUrl = letzNavPropertiesReader.getValue("editorurl");
 	public String playerUrl = letzNavPropertiesReader.getValue("playerurl");
 	public String downloadUrl;
