@@ -15,7 +15,8 @@ public class letzNavBrowser {
 	public static WebDriver startBrowser(String browser, String url, String component) {
 		ChromeOptions options;
 		DesiredCapabilities capabilities;
-		String chromeDriverpath = System.getProperty("user.dir") + "\\ExecutionBrowserDrivers\\chromedriver.exe";
+		
+	//	String chromeDriverpath = System.getProperty("user.dir") + "\\ExecutionBrowserDrivers\\chromedriver.exe";
 		String selectBrowser = browser.toLowerCase();
 		switch (selectBrowser) {
 
@@ -23,7 +24,8 @@ public class letzNavBrowser {
 
 			// logs=Logger.getLogger(letzNavRegressionTest.class);
 
-			System.setProperty("webdriver.chrome.driver", chromeDriverpath);
+			//System.setProperty("webdriver.chrome.driver", chromeDriverpath);
+			System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 			options = new ChromeOptions();
 			if (component.equalsIgnoreCase("player")) {
 				options.addExtensions(
@@ -45,7 +47,8 @@ public class letzNavBrowser {
 		case "safari":
 			break;
 		default:
-			System.setProperty("webdriver.chrome.driver", chromeDriverpath);
+		//	System.setProperty("webdriver.chrome.driver", chromeDriverpath);
+			System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 			options = new ChromeOptions();
 			if (component.equalsIgnoreCase("player")) {
 				options.addExtensions(
