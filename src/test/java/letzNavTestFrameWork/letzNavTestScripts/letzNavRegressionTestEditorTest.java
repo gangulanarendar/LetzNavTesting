@@ -61,7 +61,7 @@ public class letzNavRegressionTestEditorTest {
 	
 	public static void downloadExtension(String extensionName) {
 		
-		 String file = System.getProperty("user.dir") + "/ExtensionResouces/CRX";
+		 String file = System.getProperty("user.dir") + "/ExecutionBrowserDrivers/CRX";
 		
 		 System.out.println("System.getProperty(user.dir) :"+System.getProperty("user.dir"));
 		 String	filePath = file.replace("CRX", "letznav_editor.crx");
