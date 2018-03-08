@@ -58,7 +58,7 @@ public class letzNavRegressionTestEditorTest {
     {
     	
     	
-      File files=new File(System.getProperty("/usr/bin"));
+      File files=new File("usr/bin");
   	for(File f:files.listFiles())
 	{
 		if(f.isDirectory())
