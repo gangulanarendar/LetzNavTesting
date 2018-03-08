@@ -35,11 +35,6 @@ import letzNavTestFrameWork.letzNavConfiguration.letzNavScreenShots;
 public class letzNavRegressionTestEditorTest {
 	Logger logs;
 	public WebDriver driver;
-	
-	
-	
-	
-
 	public String baseURL = letzNavPropertiesReader.getValue("url");
 	public String clarityid = letzNavPropertiesReader.getValue("clarityid");
 	public String claritypwd = letzNavPropertiesReader.getValue("claritypwd");
