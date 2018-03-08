@@ -43,10 +43,10 @@ public class letzNavBrowser {
 		      //options.addArguments("--headless", "--disable-gpu");
 				driver = new ChromeDriver(options);
 			
-		   capabilities = new DesiredCapabilities();
-			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-			driver = new ChromeDriver();
-			driver.manage().window().maximize();*/
+//		   capabilities = new DesiredCapabilities();
+//			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+//			driver = new ChromeDriver();
+			driver.manage().window().maximize();
 
 			break; 
 		case "firefox":
