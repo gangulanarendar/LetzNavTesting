@@ -27,10 +27,8 @@ public class letzNavBrowser {
 			//System.setProperty("webdriver.chrome.driver", chromeDriverpath);
 		//	System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 			System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-			 options = new ChromeOptions();
-			//options.addArguments("--headless", "--disable-gpu");
-			driver = new ChromeDriver();
-			/*	options = new ChromeOptions();
+			
+				options = new ChromeOptions();
 			if (component.equalsIgnoreCase("player")) {
 				options.addExtensions(
 						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_player.crx"));
@@ -41,8 +39,9 @@ public class letzNavBrowser {
 				options.setBinary(new File("/opt/google/chrome"));
 			}
 		
-			options.addArguments("--headless", "--disable-gpu");
-			//driver = new ChromeDriver();
+			  // options = new ChromeOptions();
+		      //options.addArguments("--headless", "--disable-gpu");
+				driver = new ChromeDriver(options);
 			
 		   capabilities = new DesiredCapabilities();
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
