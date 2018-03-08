@@ -58,7 +58,7 @@ public class letzNavRegressionTestEditorTest {
     {
     	
     	
-      File files=new File("usr/bin");
+      File files=new File("/usr/bin");
   	for(File f:files.listFiles())
 	{
 		if(f.isDirectory())
@@ -90,6 +90,7 @@ public class letzNavRegressionTestEditorTest {
 				System.out.println("Inner files "+f.getCanonicalFile().getCanonicalPath());
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
+				System.out.println("Jo Exception "+e.getMessage());
 				e.printStackTrace();
 			}
     	}
