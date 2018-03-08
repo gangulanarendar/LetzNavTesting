@@ -30,9 +30,11 @@ public class letzNavBrowser {
 			if (component.equalsIgnoreCase("player")) {
 				options.addExtensions(
 						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_player.crx"));
+				options.setBinary(new File("/opt/google/chrome"));
 			} else if (component.equalsIgnoreCase("editor")) {
 				options.addExtensions(
 						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_editor.crx"));
+				options.setBinary(new File("/opt/google/chrome"));
 			}
 		
 			options.addArguments("--headless", "--disable-gpu");
