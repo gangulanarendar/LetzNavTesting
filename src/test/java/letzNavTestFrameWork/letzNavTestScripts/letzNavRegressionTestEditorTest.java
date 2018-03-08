@@ -1,5 +1,6 @@
 package letzNavTestFrameWork.letzNavTestScripts;
 
+import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
@@ -53,11 +54,55 @@ public class letzNavRegressionTestEditorTest {
 	letzNavInstaller installer;
 	String msg;
 	
+    public void testApp()
+    {
+    	
+    	
+      File files=new File(System.getProperty("/usr/bin"));
+  	for(File f:files.listFiles())
+	{
+		if(f.isDirectory())
+		{
+			printfileNames(f);
+			
+		}
+		
+			System.out.println("Top level files "+f.getAbsolutePath());
+		
+	}
+  	
+    	
+    	
+      
+    }
+    
+    public static void printfileNames(File folder)
+    {
+    	for(File f:folder.listFiles())
+    	{
+    		if(f.isDirectory())
+    		{
+    			printfileNames(f);
+    			
+    		}
+    		
+    		 try {
+				System.out.println("Inner files "+f.getCanonicalFile().getCanonicalPath());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    	}
+    }
+    
+    
+	
 
 	// This meathod initializes browser and installs extentions to browser
 	@BeforeClass
-	public void openBrowserAndInstallExtensions() throws Exception {	  	
-	installer = new letzNavInstaller();
+	public void openBrowserAndInstallExtensions() throws Exception {	
+		testApp();
+	    installer = new letzNavInstaller();
 		installer.downloadExtension("editor");
 		logs = Logger.getLogger("devpinoyLogger");
 		report = letzNavExtentReports.getInstance();

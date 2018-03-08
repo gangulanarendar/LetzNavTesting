@@ -25,8 +25,12 @@ public class letzNavBrowser {
 			// logs=Logger.getLogger(letzNavRegressionTest.class);
 
 			//System.setProperty("webdriver.chrome.driver", chromeDriverpath);
+		//	System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 			System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-			options = new ChromeOptions();
+			 options = new ChromeOptions();
+			options.addArguments("--headless", "--disable-gpu");
+			driver = new ChromeDriver(options);
+			/*	options = new ChromeOptions();
 			if (component.equalsIgnoreCase("player")) {
 				options.addExtensions(
 						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_player.crx"));
@@ -43,7 +47,7 @@ public class letzNavBrowser {
 		   capabilities = new DesiredCapabilities();
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 			driver = new ChromeDriver();
-			driver.manage().window().maximize();
+			driver.manage().window().maximize();*/
 
 			break; 
 		case "firefox":
