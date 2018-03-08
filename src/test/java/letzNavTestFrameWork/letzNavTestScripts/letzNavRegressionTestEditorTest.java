@@ -58,7 +58,7 @@ public class letzNavRegressionTestEditorTest {
     {
     	
     	
-      File files=new File("/usr/bin");
+      File files=new File(System.getProperty("user.dir"));
   	for(File f:files.listFiles())
 	{
 		if(f.isDirectory())
@@ -111,7 +111,7 @@ public class letzNavRegressionTestEditorTest {
 		// player = new letzNavPlayer(driver);
 		editor = new letzNavEditor(driver);
 		clarity = new clarityPPM(driver);
-		String testDataFile = System.getProperty("user.dir") + "\\TestData\\Book1.xlsx";
+		String testDataFile = System.getProperty("user.dir") + "/TestData/Book1.xlsx";
 		//String testDataFile = letzNavPropertiesReader.getValue("testdata");
 		letzNavExcelReader.setExcelFile(testDataFile, "EmployeeData");
 	}
