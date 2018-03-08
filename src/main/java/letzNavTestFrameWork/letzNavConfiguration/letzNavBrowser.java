@@ -42,7 +42,7 @@ public class letzNavBrowser {
 			
 		   capabilities = new DesiredCapabilities();
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-			driver = new ChromeDriver(capabilities);
+			driver = new ChromeDriver();
 			driver.manage().window().maximize();
 
 			break; 
@@ -67,7 +67,7 @@ public class letzNavBrowser {
 			//driver = new ChromeDriver(options);
 			capabilities = new DesiredCapabilities();
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-			driver = new ChromeDriver(capabilities);
+			driver = new ChromeDriver();
 			driver.manage().window().maximize();
 
 		}
