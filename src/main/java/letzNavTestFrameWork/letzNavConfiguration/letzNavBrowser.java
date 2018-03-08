@@ -28,8 +28,8 @@ public class letzNavBrowser {
 		//	System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 			System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 			 options = new ChromeOptions();
-			options.addArguments("--headless", "--disable-gpu");
-			driver = new ChromeDriver(options);
+			//options.addArguments("--headless", "--disable-gpu");
+			driver = new ChromeDriver();
 			/*	options = new ChromeOptions();
 			if (component.equalsIgnoreCase("player")) {
 				options.addExtensions(
