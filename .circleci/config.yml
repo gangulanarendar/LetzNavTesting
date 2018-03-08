@@ -41,12 +41,9 @@ jobs:
         run: 
           command: |
               sudo wget https://letznav-testing.herokuapp.com/api/public/admin/extensions/editor/letznav_editor.crx -P /opt/google/chrome
-              sudo cd /opt/google/chrome
-              sudo mkdir extensions
-              sudo cd extensions
+              sudo mkdir /opt/google/chrome/extensions
               sudo cp -r ~/circleCiTesting/mfginfjmghngicgddlophpooodakcion.json /opt/google/chrome/extensions
-              sudo cd /opt/google/chrome/extensions
-              sudo chmod 777  mfginfjmghngicgddlophpooodakcion.json
+              sudo chmod 777  /opt/google/chrome/extensions/mfginfjmghngicgddlophpooodakcion.json
           name: "Install latest version of Letznav editor extension"
       - 
         run: 
