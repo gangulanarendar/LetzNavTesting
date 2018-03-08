@@ -35,8 +35,8 @@ public class letzNavBrowser {
 						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_editor.crx"));
 			}
 		
-			//options.addArguments("--headless", "--disable-gpu");
-			//driver = new ChromeDriver(options);
+			options.addArguments("--headless", "--disable-gpu");
+			driver = new ChromeDriver(options);
 			
 		   capabilities = new DesiredCapabilities();
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
