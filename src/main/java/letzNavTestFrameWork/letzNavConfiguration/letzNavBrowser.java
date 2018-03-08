@@ -38,14 +38,14 @@ public class letzNavBrowser {
 			}
 		
 			options.addArguments("--headless", "--disable-gpu");
-			driver = new ChromeDriver(options);
+			//driver = new ChromeDriver();
 			
 		   capabilities = new DesiredCapabilities();
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 			driver = new ChromeDriver(capabilities);
 			driver.manage().window().maximize();
 
-			break;
+			break; 
 		case "firefox":
 			break;
 		case "internetExplorer":
