@@ -52,6 +52,8 @@ jobs:
           paths: 
             - ~/.m2
       - 
+        run: "mvn clean"
+      - 
         run: "mvn test"
       - 
         store_artifacts: 
