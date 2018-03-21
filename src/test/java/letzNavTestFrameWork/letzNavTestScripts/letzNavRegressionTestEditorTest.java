@@ -97,7 +97,7 @@ public class letzNavRegressionTestEditorTest {
 	// This meathod initializes browser and installs extentions to browser
 	@BeforeClass
 	public void openBrowserAndInstallExtensions() throws Exception {	
-		//testApp();
+		testApp();
 	    installer = new letzNavInstaller();
 		installer.downloadExtension("editor");
 		logs = Logger.getLogger("devpinoyLogger");
