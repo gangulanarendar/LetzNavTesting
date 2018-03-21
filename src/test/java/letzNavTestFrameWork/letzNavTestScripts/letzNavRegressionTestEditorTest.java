@@ -146,6 +146,7 @@ public class letzNavRegressionTestEditorTest {
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			test = report.startTest("Login Clarity PPM");
 			test.log(LogStatus.INFO, "Validate clarity & editor login");
+			System.out.println("clarityid "+clarityid +" , claritypwd"+claritypwd);
 			clarity.loginPage(clarityid, claritypwd);
 			editor.letzNavLoginToTool(editorId, editorPwd);
 			clarity.goToPortlets();

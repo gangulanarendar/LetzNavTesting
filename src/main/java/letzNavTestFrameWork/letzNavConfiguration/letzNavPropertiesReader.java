@@ -33,7 +33,7 @@ public static String getPropertyAsString(Properties prop) {
 			is = new FileInputStream(new File(System.getProperty("user.dir")
 					+ "/src/main/java/letzNavTestFrameWork/letzNavConfiguration/letzNavConfig.properties"));
 			prop.load(is);
-			System.out.println(getPropertyAsString(prop));
+			//System.out.println(getPropertyAsString(prop));
 			value = prop.getProperty(desiredValue.toLowerCase());
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
