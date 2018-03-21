@@ -47,7 +47,7 @@ public class letzNavBrowser {
 //		   capabilities = new DesiredCapabilities();
 //			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 //			driver = new ChromeDriver();
-			driver.manage().window().maximize();
+			//driver.manage().window().maximize();
 
 			break; 
 		case "firefox":
