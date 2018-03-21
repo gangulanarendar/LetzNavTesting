@@ -40,7 +40,8 @@ public class letzNavBrowser {
 			}
 		
 			    options = new ChromeOptions();
-		        options.addArguments("--headless", "--disable-gpu");
+			    options.addArguments("--browsertime.xvfb");
+		      //  options.addArguments("--headless", "--disable-gpu");
 				driver = new ChromeDriver(options);
 			
 //		   capabilities = new DesiredCapabilities();
