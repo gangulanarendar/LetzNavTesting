@@ -5,9 +5,12 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -103,6 +106,18 @@ public class letzNavRegressionTestEditorTest {
 		logs = Logger.getLogger("devpinoyLogger");
 		report = letzNavExtentReports.getInstance();
 		driver = letzNavBrowser.startBrowser("chrome", letzNavPropertiesReader.getValue("url"), component);
+		
+		File src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		try {
+			 // now copy the  screenshot to desired location using copyFile //method
+			FileUtils.copyFile(src, new File("/home/circleci/circleCiTesting/target/surefire-reports/naren_sc_shot.png"));
+			}
+			 
+			catch (IOException e)
+			 {
+			  System.out.println(e.getMessage());
+			 
+			 }	
 		// player = new letzNavPlayer(driver);
 		editor = new letzNavEditor(driver);
 		clarity = new clarityPPM(driver);

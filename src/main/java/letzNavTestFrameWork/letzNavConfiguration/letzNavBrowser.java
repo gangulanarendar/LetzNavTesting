@@ -27,22 +27,25 @@ public class letzNavBrowser {
 			//System.setProperty("webdriver.chrome.driver", chromeDriverpath);
 		//	System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 			System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-			
-				options = new ChromeOptions();
-			if (component.equalsIgnoreCase("player")) {
-				options.addExtensions(
-						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_player.crx"));
-				options.setBinary(new File("/opt/google/chrome"));
-			} else if (component.equalsIgnoreCase("editor")) {
-				options.addExtensions(
-						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_editor.crx"));
-				options.setBinary(new File("/opt/google/chrome"));
-			}
-		
+//			
+//				options = new ChromeOptions();
+//			if (component.equalsIgnoreCase("player")) {
+//				options.addExtensions(
+//						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_player.crx"));
+//				options.setBinary(new File("/opt/google/chrome"));
+//			} else if (component.equalsIgnoreCase("editor")) {
+//				options.addExtensions(
+//						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_editor.crx"));
+//				options.setBinary(new File("/opt/google/chrome"));
+//			}
+//		
 			    options = new ChromeOptions();
-			    options.addExtensions(
-						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_editor.crx"));
-				options.setBinary(new File("/opt/google/chrome"));
+			   // options.addArguments("–load-extension=” + pathToExtension);
+//			    options.addExtensions(
+//						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_editor.crx"));
+//				options.setBinary(new File("/opt/google/chrome"));
+			  //  options.addArguments("--load-extension=D:\\PC Plugins\\FF & IEv1.5.5.149\\download");
+			    
 			    options.addArguments("--browsertime.xvfb");
 		      //  options.addArguments("--headless", "--disable-gpu");
 				driver = new ChromeDriver(options);
