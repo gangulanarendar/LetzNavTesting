@@ -40,6 +40,9 @@ public class letzNavBrowser {
 			}
 		
 			    options = new ChromeOptions();
+			    options.addExtensions(
+						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_editor.crx"));
+				options.setBinary(new File("/opt/google/chrome"));
 			    options.addArguments("--browsertime.xvfb");
 		      //  options.addArguments("--headless", "--disable-gpu");
 				driver = new ChromeDriver(options);
