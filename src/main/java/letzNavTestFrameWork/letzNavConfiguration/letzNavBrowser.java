@@ -39,8 +39,8 @@ public class letzNavBrowser {
 				options.setBinary(new File("/opt/google/chrome"));
 			}
 		
-			  // options = new ChromeOptions();
-		      //options.addArguments("--headless", "--disable-gpu");
+			    options = new ChromeOptions();
+		        options.addArguments("--headless", "--disable-gpu");
 				driver = new ChromeDriver(options);
 			
 //		   capabilities = new DesiredCapabilities();

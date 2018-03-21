@@ -3,7 +3,7 @@ jobs:
   build: 
     docker: 
       - 
-        image: "circleci/openjdk:8-jdk"
+        image: "circleci/openjdk:8u151-jdk-browsers"
     environment: 
       MAVEN_OPTS: "-Xmx3200m"
     steps: 
