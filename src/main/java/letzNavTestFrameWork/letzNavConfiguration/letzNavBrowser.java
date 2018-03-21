@@ -88,7 +88,7 @@ public class letzNavBrowser {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get(url);
 		
-		File src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		/*File src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		try {
 			 // now copy the  screenshot to desired location using copyFile //method
 			FileUtils.copyFile(src, new File("/home/circleci/circleCiTesting/target/surefire-reports/naren_sc_shot.png"));
@@ -98,7 +98,7 @@ public class letzNavBrowser {
 			 {
 			  System.out.println(e.getMessage());
 			 
-			 }	
+			 }	*/
 		
 		return driver;
 
