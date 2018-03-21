@@ -4,8 +4,6 @@ jobs:
     docker: 
       - 
         image: "circleci/openjdk:8-jdk-browsers"
-      -
-        image: "selenium/standalone-chrome:latest"
     environment: 
       MAVEN_OPTS: "-Xmx3200m"
     steps: 
