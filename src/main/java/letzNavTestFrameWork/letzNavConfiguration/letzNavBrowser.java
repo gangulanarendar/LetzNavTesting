@@ -51,12 +51,14 @@ public class letzNavBrowser {
 			  //  options.addArguments("--load-extension=D:\\PC Plugins\\FF & IEv1.5.5.149\\download");
 			    
 			    options.addArguments("--browsertime.xvfb");
+			    options.addArguments("--load-extension=/home/circleci/circleCiTesting/ExecutionBrowserDrivers/letznav_editor.crx");
+			   // options.addExtensions(new File"/home/circleci/circleCiTesting/target/surefire-reports/naren_sc_shot_1.png");
 		      //  options.addArguments("--headless", "--disable-gpu");
-				driver = new ChromeDriver(options);
+			//	driver = new ChromeDriver(options);
 			
-//		   capabilities = new DesiredCapabilities();
-//			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-//			driver = new ChromeDriver();
+ 		   capabilities = new DesiredCapabilities();
+			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+			driver = new ChromeDriver(capabilities);
 			//driver.manage().window().maximize();
 
 			break; 
