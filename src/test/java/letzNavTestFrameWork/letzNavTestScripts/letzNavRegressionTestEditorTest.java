@@ -107,17 +107,7 @@ public class letzNavRegressionTestEditorTest {
 		report = letzNavExtentReports.getInstance();
 		driver = letzNavBrowser.startBrowser("chrome", letzNavPropertiesReader.getValue("url"), component);
 		
-		File src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		try {
-			 // now copy the  screenshot to desired location using copyFile //method
-			FileUtils.copyFile(src, new File("/home/circleci/circleCiTesting/target/surefire-reports/naren_sc_shot.png"));
-			}
-			 
-			catch (IOException e)
-			 {
-			  System.out.println(e.getMessage());
-			 
-			 }	
+		
 		// player = new letzNavPlayer(driver);
 		editor = new letzNavEditor(driver);
 		clarity = new clarityPPM(driver);
