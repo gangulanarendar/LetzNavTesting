@@ -48,50 +48,38 @@ public class letzNavRegressionTestEditorTest {
 	String component = "editor";
 	letzNavInstaller installer;
 	String msg;
-	
-    public void testApp()
-    {
-    	
-    	
-      File files=new File(System.getProperty("user.dir"));
-  	for(File f:files.listFiles())
-	{
-		if(f.isDirectory())
-		{
-			printfileNames(f);
-			
+
+	public void testApp() {
+
+		File files = new File(System.getProperty("user.dir"));
+		for (File f : files.listFiles()) {
+			if (f.isDirectory()) {
+				printfileNames(f);
+
+			}
+
+			System.out.println("Top level files " + f.getAbsolutePath());
+
 		}
-		
-			System.out.println("Top level files "+f.getAbsolutePath());
-		
+
 	}
-  	
-    	
-    	
-      
-    }
-    
-    public static void printfileNames(File folder)
-    {
-    	for(File f:folder.listFiles())
-    	{
-    		if(f.isDirectory())
-    		{
-    			printfileNames(f);
-    			
-    		}
-    		
-    		 try {
-				System.out.println("Inner files "+f.getCanonicalFile().getCanonicalPath());
+
+	public static void printfileNames(File folder) {
+		for (File f : folder.listFiles()) {
+			if (f.isDirectory()) {
+				printfileNames(f);
+
+			}
+
+			try {
+				System.out.println("Inner files " + f.getCanonicalFile().getCanonicalPath());
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
-				System.out.println("Jo Exception "+e.getMessage());
+				System.out.println("Jo Exception " + e.getMessage());
 				e.printStackTrace();
 			}
-    	}
-    }
-    
-    
+		}
+	}
 	
 
 	// This meathod initializes browser and installs extentions to browser

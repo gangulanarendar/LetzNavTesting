@@ -1,12 +1,8 @@
 package letzNavTestFrameWork.letzNavConfiguration;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -15,47 +11,41 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class letzNavBrowser {
 
 	static WebDriver driver;
-	//static String chromeDriverpath = letzNavPropertiesReader.getValue("chromedriver");
+
+	// static String chromeDriverpath =
+	// letzNavPropertiesReader.getValue("chromedriver");
 	public static WebDriver startBrowser(String browser, String url, String component) {
 		ChromeOptions options;
 		DesiredCapabilities capabilities;
-		
-	//	String chromeDriverpath = System.getProperty("user.dir") + "\\ExecutionBrowserDrivers\\chromedriver.exe";
+
+		// String chromeDriverpath = System.getProperty("user.dir") +
+		// "\\ExecutionBrowserDrivers\\chromedriver.exe";
 		String selectBrowser = browser.toLowerCase();
 		switch (selectBrowser) {
 
 		case "chrome":
 
-		
 			System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-//			
-//				options = new ChromeOptions();
-//			if (component.equalsIgnoreCase("player")) {
-//				options.addExtensions(
-//						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_player.crx"));
 
-//			} else if (component.equalsIgnoreCase("editor")) {
-//				options.addExtensions(
-//						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_editor.crx"));
+			options = new ChromeOptions();
+			options.addArguments("--browsertime.xvfb");
+			// options.addExtensions(
+			// new File(System.getProperty("user.dir") +
+			// "//ExecutionBrowserDrivers//letznav_editor.crx"));
+			if (component.equalsIgnoreCase("player")) {
+				options.addExtensions(new File("/opt/google/chrome/letznav_player.crx"));
 
-//			}
-//		
-			    options = new ChromeOptions();
-//			    options.addExtensions(
-//						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_editor.crx"));	
-			    options.addExtensions(
-						new File("/opt/google/chrome/letznav_editor.crx"));		
-			    options.addExtensions(
-						new File("/opt/google/chrome/letznav_player.crx"));	
-			    options.addArguments("--browsertime.xvfb");
-			
-			
- 		  capabilities = new DesiredCapabilities();
+			} else if (component.equalsIgnoreCase("editor")) {
+				options.addExtensions(new File("/opt/google/chrome/letznav_editor.crx"));
+
+			}
+
+			capabilities = new DesiredCapabilities();
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 			driver = new ChromeDriver(capabilities);
-			//driver.manage().window().maximize();
+			// driver.manage().window().maximize();
 
-			break; 
+			break;
 		case "firefox":
 			break;
 		case "internetExplorer":
@@ -63,7 +53,7 @@ public class letzNavBrowser {
 		case "safari":
 			break;
 		default:
-		//	System.setProperty("webdriver.chrome.driver", chromeDriverpath);
+			// System.setProperty("webdriver.chrome.driver", chromeDriverpath);
 			System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 			options = new ChromeOptions();
 			if (component.equalsIgnoreCase("player")) {
@@ -73,8 +63,8 @@ public class letzNavBrowser {
 				options.addExtensions(
 						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_editor.crx"));
 			}
-			//options.addArguments("--headless", "--disable-gpu");
-			//driver = new ChromeDriver(options);
+			// options.addArguments("--headless", "--disable-gpu");
+			// driver = new ChromeDriver(options);
 			capabilities = new DesiredCapabilities();
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 			driver = new ChromeDriver();
@@ -83,9 +73,7 @@ public class letzNavBrowser {
 		}
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get(url);
-		
-		
-		
+
 		return driver;
 
 	}
