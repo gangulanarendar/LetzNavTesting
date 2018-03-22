@@ -41,8 +41,10 @@ public class letzNavBrowser {
 //			}
 //		
 			    options = new ChromeOptions();
+//			    options.addExtensions(
+//						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_editor.crx"));	
 			    options.addExtensions(
-						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_editor.crx"));			    
+						new File("/opt/google/chrome/letznav_editor.crx"));		
 			    options.addArguments("--browsertime.xvfb");
 			
 			
