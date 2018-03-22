@@ -151,7 +151,7 @@ public class letzNavRegressionTestEditorTest {
 			System.out.println("clarityid "+clarityid +" , claritypwd"+claritypwd);
 			clarity.loginPage(clarityid, claritypwd);
 			editor.letzNavLoginToTool(editorId, editorPwd);
-			//clarity.goToPortlets();
+			clarity.goToPortlets();
 			
 			
 

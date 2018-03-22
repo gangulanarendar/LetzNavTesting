@@ -47,7 +47,7 @@ public class clarityPPM {
 	public void goToPortlets() {
 	
 	 
-		driver.navigate().to("http://ppmdemo.letznav.com/niku/nu#action:npt.myPortlets");
+		driver.navigate().to("https://www.google.com/intl/en_in/gmail/about/");
 		File src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		try {
 			
