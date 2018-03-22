@@ -47,7 +47,7 @@ public class clarityPPM {
 	public void goToPortlets() {
 	
 	 
-		driver.navigate().to("http://111.93.27.187:8889/niku/nu");
+		driver.navigate().to("https://en.wikipedia.org/wiki/Braxton_Bragg#Historical_reputation");
 	//	driver.get(arg0);
 		File src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		try {
