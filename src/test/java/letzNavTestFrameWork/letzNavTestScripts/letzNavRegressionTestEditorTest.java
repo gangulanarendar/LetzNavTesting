@@ -86,8 +86,8 @@ public class letzNavRegressionTestEditorTest {
 	@BeforeClass
 	public void openBrowserAndInstallExtensions() throws Exception {	
 		//testApp();
-	    installer = new letzNavInstaller();
-		installer.downloadExtension("editor");
+	   // installer = new letzNavInstaller();
+		//installer.downloadExtension("editor");
 		logs = Logger.getLogger("devpinoyLogger");
 		report = letzNavExtentReports.getInstance();
 		driver = letzNavBrowser.startBrowser("chrome", letzNavPropertiesReader.getValue("url"), component);
