@@ -30,7 +30,7 @@ public class letzNavBrowser {
 
 			//System.setProperty("webdriver.chrome.driver", chromeDriverpath);
 		//	System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-			System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+			System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver.exe");
 //			
 //				options = new ChromeOptions();
 //			if (component.equalsIgnoreCase("player")) {
@@ -45,21 +45,21 @@ public class letzNavBrowser {
 //		
 			    options = new ChromeOptions();
 			   // options.addArguments("–load-extension=” + pathToExtension);
-//			    options.addExtensions(
-//						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_editor.crx"));
-//				options.setBinary(new File("/opt/google/chrome"));
+			    options.addExtensions(
+						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_editor.crx"));
+				//options.setBinary(new File("/opt/google/chrome"));
 			  //  options.addArguments("--load-extension=D:\\PC Plugins\\FF & IEv1.5.5.149\\download");
 			    
 			    options.addArguments("--browsertime.xvfb");
 			//    options.addArguments("--load-extension=/home/circleci/circleCiTesting/ExecutionBrowserDrivers/letznav_editor.crx");
 			   // options.addExtensions(new File"/home/circleci/circleCiTesting/target/surefire-reports/naren_sc_shot_1.png");
 		      //  options.addArguments("--headless", "--disable-gpu");
-				driver = new ChromeDriver(options);
+				//driver = new ChromeDriver(options);
 			
- 		/*   capabilities = new DesiredCapabilities();
+ 		  capabilities = new DesiredCapabilities();
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
 			driver = new ChromeDriver(capabilities);
-		*/	//driver.manage().window().maximize();
+			//driver.manage().window().maximize();
 
 			break; 
 		case "firefox":
