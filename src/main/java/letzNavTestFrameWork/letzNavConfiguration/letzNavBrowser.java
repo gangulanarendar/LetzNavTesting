@@ -30,7 +30,7 @@ public class letzNavBrowser {
 
 			//System.setProperty("webdriver.chrome.driver", chromeDriverpath);
 		//	System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-			System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 //			
 //				options = new ChromeOptions();
 //			if (component.equalsIgnoreCase("player")) {
