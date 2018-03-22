@@ -42,7 +42,6 @@ jobs:
         run: 
           command: |
               sudo wget https://letznav-testing.herokuapp.com/api/public/admin/extensions/player/letznav_player.crx -P /opt/google/chrome
-              sudo mkdir /opt/google/chrome/extensions
               sudo cp -r ~/circleCiTesting/bpgnbhpmapjejjgieobojikijibkabnl.json /opt/google/chrome/extensions
               sudo chmod 777  /opt/google/chrome/extensions/bpgnbhpmapjejjgieobojikijibkabnl.json
           name: "Install latest version of Letznav player extension"
