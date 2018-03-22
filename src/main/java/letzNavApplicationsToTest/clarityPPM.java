@@ -60,7 +60,7 @@ public class clarityPPM {
 			 
 			 }	
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-		driver.quit();
+		//driver.quit();
 		
 		
 		

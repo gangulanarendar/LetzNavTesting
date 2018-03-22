@@ -151,7 +151,7 @@ public class letzNavRegressionTestEditorTest {
 			System.out.println("clarityid "+clarityid +" , claritypwd"+claritypwd);
 			clarity.loginPage(clarityid, claritypwd);
 			editor.letzNavLoginToTool(editorId, editorPwd);
-			clarity.goToPortlets();
+			//clarity.goToPortlets();
 			
 			
 
@@ -337,6 +337,7 @@ public class letzNavRegressionTestEditorTest {
 
 	@AfterClass // This meathod will close browser
 	public void afterClass() throws IOException {
+		driver.quit();
 		//installer.clearExtensionResources();
 		//driver.quit();
 /*		File src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
