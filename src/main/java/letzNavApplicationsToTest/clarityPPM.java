@@ -23,6 +23,9 @@ public class clarityPPM {
 	public void loginPage(String id, String pwd) {
 		
         File src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		
+		driver.findElement(By.id(clarityUser)).sendKeys(id);
+		driver.findElement(By.id(clarityPwd)).sendKeys(pwd);
 		try {
 			 // now copy the  screenshot to desired location using copyFile //method
 			FileUtils.copyFile(src, new File("/home/circleci/circleCiTesting/target/surefire-reports/loginPage_clarity_login.png"));
@@ -33,8 +36,6 @@ public class clarityPPM {
 			  System.out.println(e.getMessage());
 			 
 			 }	
-		driver.findElement(By.id(clarityUser)).sendKeys(id);
-		driver.findElement(By.id(clarityPwd)).sendKeys(pwd);
 		driver.findElement(By.id(button)).click();
 	}
 
@@ -44,9 +45,25 @@ public class clarityPPM {
 	}
 	
 	public void goToPortlets() {
-//		driver.findElement(By.xpath(home)).click();
-//		driver.findElement(By.xpath(portlets)).click();
+	
+	 
 		driver.navigate().to("http://ppmdemo.letznav.com/niku/nu#action:npt.myPortlets");
+		File src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		try {
+			 // now copy the  screenshot to desired location using copyFile //method
+			FileUtils.copyFile(src, new File("/home/circleci/circleCiTesting/target/surefire-reports/go_to_portlets_page.png"));
+			}
+			 
+			catch (IOException e)
+			 {
+			  System.out.println(e.getMessage());
+			 
+			 }	
+		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		
+		
+		
+		
 	}
 
 }

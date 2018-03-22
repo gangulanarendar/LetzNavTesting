@@ -363,6 +363,17 @@ public class letzNavEditor {
 		driver.findElement(By.xpath(letzNavEditorButton)).click();
 		driver.findElement(By.xpath(editorLogin)).sendKeys(loginId);
 		driver.findElement(By.xpath(editorPassword)).sendKeys(password);
+		src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		try {
+			 // now copy the  screenshot to desired location using copyFile //method
+			FileUtils.copyFile(src, new File("/home/circleci/circleCiTesting/target/surefire-reports/letzNavEditorentered_values.png"));
+			}
+			 
+			catch (IOException e)
+			 {
+			  System.out.println(e.getMessage());
+			 
+			 }	
 		driver.findElement(By.xpath(editorLoginButton)).click();
 		}
 		catch(Exception e) {
