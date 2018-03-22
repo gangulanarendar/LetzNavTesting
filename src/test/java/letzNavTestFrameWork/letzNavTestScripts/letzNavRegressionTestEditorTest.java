@@ -5,12 +5,9 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
@@ -112,7 +109,7 @@ public class letzNavRegressionTestEditorTest {
 		editor = new letzNavEditor(driver);
 		clarity = new clarityPPM(driver);
 		String testDataFile = System.getProperty("user.dir") + "/TestData/Book1.xlsx";
-		//String testDataFile = letzNavPropertiesReader.getValue("testdata");
+	
 		letzNavExcelReader.setExcelFile(testDataFile, "EmployeeData");
 	}
 
@@ -161,7 +158,8 @@ public class letzNavRegressionTestEditorTest {
 		} catch (Exception e) {
 			msg = e.getMessage();
 			test.log(LogStatus.ERROR, msg);
-			e.printStackTrace();
+			System.out.println("Exception editorLogin "+e);
+			//e.printStackTrace();
 		}
 	}
 
@@ -340,8 +338,8 @@ public class letzNavRegressionTestEditorTest {
 	@AfterClass // This meathod will close browser
 	public void afterClass() throws IOException {
 		//installer.clearExtensionResources();
-		
-		File src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		//driver.quit();
+/*		File src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		try {
 			 // now copy the  screenshot to desired location using copyFile //method
 			FileUtils.copyFile(src, new File("/home/circleci/circleCiTesting/target/surefire-reports/afterclass_page.png"));
@@ -351,8 +349,8 @@ public class letzNavRegressionTestEditorTest {
 			 {
 			  System.out.println(e.getMessage());
 			 
-			 }	
-		driver.quit();
+			 }	*/
+		
 
 	}
 }

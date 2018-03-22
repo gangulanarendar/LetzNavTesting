@@ -50,16 +50,17 @@ public class clarityPPM {
 		driver.navigate().to("http://ppmdemo.letznav.com/niku/nu#action:npt.myPortlets");
 		File src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		try {
-			 // now copy the  screenshot to desired location using copyFile //method
+			
 			FileUtils.copyFile(src, new File("/home/circleci/circleCiTesting/target/surefire-reports/go_to_portlets_page.png"));
 			}
 			 
 			catch (IOException e)
 			 {
-			  System.out.println(e.getMessage());
+			  System.out.println("goToPortlets "+e.getMessage());
 			 
 			 }	
 		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		driver.quit();
 		
 		
 		

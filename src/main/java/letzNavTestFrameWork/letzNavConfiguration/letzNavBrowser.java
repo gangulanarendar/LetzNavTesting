@@ -26,35 +26,25 @@ public class letzNavBrowser {
 
 		case "chrome":
 
-			// logs=Logger.getLogger(letzNavRegressionTest.class);
-
-			//System.setProperty("webdriver.chrome.driver", chromeDriverpath);
-		//	System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+		
 			System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 //			
 //				options = new ChromeOptions();
 //			if (component.equalsIgnoreCase("player")) {
 //				options.addExtensions(
 //						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_player.crx"));
-//				options.setBinary(new File("/opt/google/chrome"));
+
 //			} else if (component.equalsIgnoreCase("editor")) {
 //				options.addExtensions(
 //						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_editor.crx"));
-//				options.setBinary(new File("/opt/google/chrome"));
+
 //			}
 //		
 			    options = new ChromeOptions();
-			   // options.addArguments("–load-extension=” + pathToExtension);
 			    options.addExtensions(
-						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_editor.crx"));
-				//options.setBinary(new File("/opt/google/chrome"));
-			  //  options.addArguments("--load-extension=D:\\PC Plugins\\FF & IEv1.5.5.149\\download");
-			    
+						new File(System.getProperty("user.dir") + "//ExecutionBrowserDrivers//letznav_editor.crx"));			    
 			    options.addArguments("--browsertime.xvfb");
-			//    options.addArguments("--load-extension=/home/circleci/circleCiTesting/ExecutionBrowserDrivers/letznav_editor.crx");
-			   // options.addExtensions(new File"/home/circleci/circleCiTesting/target/surefire-reports/naren_sc_shot_1.png");
-		      //  options.addArguments("--headless", "--disable-gpu");
-				//driver = new ChromeDriver(options);
+			
 			
  		  capabilities = new DesiredCapabilities();
 			capabilities.setCapability(ChromeOptions.CAPABILITY, options);
