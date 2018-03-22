@@ -24,7 +24,7 @@ public class letzNavInstaller extends letzNavPropertiesReader {
 		try {
 			FileUtils.cleanDirectory(extensionResources);
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
+			
 			//e1.printStackTrace();
 		}
 		if (extensionName.equalsIgnoreCase("player")) {
