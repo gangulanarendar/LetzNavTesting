@@ -1,8 +1,13 @@
 package letzNavApplicationsToTest;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 public class clarityPPM {
@@ -16,6 +21,18 @@ public class clarityPPM {
 	
 
 	public void loginPage(String id, String pwd) {
+		
+        File src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		try {
+			 // now copy the  screenshot to desired location using copyFile //method
+			FileUtils.copyFile(src, new File("/home/circleci/circleCiTesting/target/surefire-reports/loginPage_clarity_login.png"));
+			}
+			 
+			catch (IOException e)
+			 {
+			  System.out.println(e.getMessage());
+			 
+			 }	
 		driver.findElement(By.id(clarityUser)).sendKeys(id);
 		driver.findElement(By.id(clarityPwd)).sendKeys(pwd);
 		driver.findElement(By.id(button)).click();

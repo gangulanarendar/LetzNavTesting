@@ -1,10 +1,15 @@
 package letzNavTestFrameWork.letzNavComponents;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -343,6 +348,18 @@ public class letzNavEditor {
 	// login to letzNavEditor
 	public void letzNavEditorLogin(String loginId, String password) {
 		try {
+			
+			 File src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+				try {
+					 // now copy the  screenshot to desired location using copyFile //method
+					FileUtils.copyFile(src, new File("/home/circleci/circleCiTesting/target/surefire-reports/letzNavEditorLogin.png"));
+					}
+					 
+					catch (IOException e)
+					 {
+					  System.out.println(e.getMessage());
+					 
+					 }	
 		driver.findElement(By.xpath(letzNavEditorButton)).click();
 		driver.findElement(By.xpath(editorLogin)).sendKeys(loginId);
 		driver.findElement(By.xpath(editorPassword)).sendKeys(password);
