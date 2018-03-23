@@ -102,7 +102,7 @@ public class letzNavRegressionTestPlayer {
 		test = report.startTest("Login Clarity PPM");
 		test.log(LogStatus.INFO, "Validate clarity login");
 		clarity.loginPage(clarityid, claritypwd);
-		
+		clarity.goToPortlets();
 		}
 		catch (Exception e) {
 			msg=e.getMessage();

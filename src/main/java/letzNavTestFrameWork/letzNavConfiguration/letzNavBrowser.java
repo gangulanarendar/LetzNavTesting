@@ -29,6 +29,7 @@ public class letzNavBrowser {
 
 			options = new ChromeOptions();
 			options.addArguments("--browsertime.xvfb");
+			options.addArguments("--disable-browser-side-navigation");
 			// options.addExtensions(
 			// new File(System.getProperty("user.dir") +
 			// "//ExecutionBrowserDrivers//letznav_editor.crx"));
